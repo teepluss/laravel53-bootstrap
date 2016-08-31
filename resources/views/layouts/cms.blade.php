@@ -43,7 +43,7 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
 
-                    <li><a href="{{ route('cms.post') }}">Story</a></li>
+                    <li><a href="{{ route('cms.post') }}">Posts</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

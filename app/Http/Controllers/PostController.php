@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App;
 use Illuminate\Http\Request;
+use App\Http\Requests\PostStore;
 
 class PostController extends Controller
 {
@@ -24,7 +25,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('post.create');
     }
 
     /**
@@ -33,9 +34,16 @@ class PostController extends Controller
      * @param  Request $request
      * @return void
      */
-    public function store(Request $request)
+    public function store(PostStore $request)
     {
-        //
+        $post = App\Post::create($request->all());
+
+        // Stamp a user to blog.
+        $authUser = $request->user();
+        $post->user()->associate($authUser)->save();
+
+        return redirect()->route('post')
+                    ->with('success', 'Post has been created');
     }
 
     /**

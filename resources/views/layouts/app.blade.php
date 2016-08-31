@@ -58,6 +58,9 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
+                                @can('create', 'App\Post')
+                                <li><a href="{{ route('post.create') }}">Write a Story</a></li>
+                                @endcan
                                 <li>
                                     <a href="{{ url('/logout') }}"
                                         onclick="event.preventDefault();

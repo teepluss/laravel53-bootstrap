@@ -1,0 +1,51 @@
+# Create index on elastic
+
+```
+PUT /laravel_53
+{
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "default": {
+          "type": "thai"
+        },
+        "thaistyle": {
+          "type": "thai",
+          "stem_exclusion": [ "organization", "organizations" ],
+          "stopwords": [
+            "a", "an", "and", "are", "as", "at", "be", "but", "by", "for",
+            "if", "in", "into", "is", "it", "of", "on", "or", "such", "that",
+            "the", "their", "then", "there", "these", "they", "this", "to",
+            "was", "will", "with"
+          ]
+        }
+      }
+    }
+  },
+  "mappings": {
+      "posts_index": {
+        "dynamic_templates": [
+          {
+            "th": {
+              "match": "*",
+              "match_mapping_type": "string",
+              "mapping": {
+                "type": "string",
+                "analyzer": "thaistyle"
+              }
+            }
+          }
+        ]
+      }
+  }
+}
+```
+
+# Check analyzer
+```
+GET /_analyze
+{
+  "analyzer" : "thaistyle",
+  "text" : "ทดสอบความสามารถ I Like your style it cool"
+}
+```

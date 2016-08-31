@@ -12,9 +12,7 @@ class MockDataSeeder extends Seeder
     public function run()
     {
         // Mock all user with the same "password".
-        $password = "password";
         factory(App\User::class, 50)->create()->each(function($u) {
-
             $assignAsRole = App\Role::inRandomOrder()->first();
             $u->roles()->attach($assignAsRole);
 

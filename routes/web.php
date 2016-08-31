@@ -20,35 +20,35 @@ Auth::routes();
 Route::get('/user', [
     'as' => 'user',
     'uses' => 'UserController@index'
-]);
+])->middleware('auth:web');
 
 Route::get('/post', [
     'as' => 'post',
     'uses' => 'PostController@index'
-])->middleware('can:view,App\Post');
+]);
 
 Route::get('/post/create', [
     'as' => 'post.create',
     'uses' => 'PostController@create'
-])->middleware('can:create,App\Post');
+])->middleware(['auth:web', 'can:create,App\Post']);
 
 Route::post('/post', [
     'as' => 'post.store',
     'uses' => 'PostController@store'
-])->middleware('can:create,App\Post');
+])->middleware(['auth:web', 'can:create,App\Post']);
 
 Route::get('/post/{post}/edit', [
     'as' => 'post.edit',
     'uses' => 'PostController@edit'
-])->middleware('can:update,post');
+])->middleware(['auth:web', 'can:view,post']);
 
 Route::put('/post/{id}', [
     'as' => 'post.update',
     'uses' => 'PostController@update'
-])->middleware('can:update,post');
+])->middleware(['auth:web', 'can:update,post']);
 
 Route::delete('/post/{id}', [
     'as' => 'post.delete',
     'uses' => 'PostController@delete'
-])->middleware('can:delete,post');
+])->middleware(['auth:web', 'can:delete,post']);
 

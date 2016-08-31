@@ -25,11 +25,12 @@ class PostPolicy extends BasePolicy
      * Determine whether the user can view the post.
      *
      * @param  App\User  $user
+     * @param  App\Post  $post
      * @return mixed
      */
-    public function view(User $user)
+    public function view(User $user, Post $post)
     {
-        return true;
+        return $user->id === $post->user_id;
     }
 
     /**

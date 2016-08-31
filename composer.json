@@ -4,16 +4,30 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/teepluss/laravel-console"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/teepluss/laravel-scout-elastic"
+        }
+    ],
     "require": {
         "php": ">=5.6.4",
-        "laravel/framework": "5.3.*"
+        "laravel/framework": "5.3.*",
+        "laravel/scout": "^1.0",
+        "tamayo/laravel-scout-elastic": "dev-master",
+        "algolia/algoliasearch-client-php": "^1.10"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~5.0",
         "symfony/css-selector": "3.1.*",
-        "symfony/dom-crawler": "3.1.*"
+        "symfony/dom-crawler": "3.1.*",
+        "darsain/laravel-console": "dev-L5"
     },
     "autoload": {
         "classmap": [

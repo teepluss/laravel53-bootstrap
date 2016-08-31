@@ -12,12 +12,10 @@
 */
 
 $factory->define(App\User::class, function (Faker\Generator $faker) {
-    static $password;
-
     return [
         'name' => $faker->name,
         'email' => $faker->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
+        'password' => bcrypt('password'),
         'remember_token' => str_random(10),
     ];
 });
@@ -25,7 +23,6 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Post::class, function(Faker\Generator $faker) {
     $paragraph = $faker->paragraph;
-
     return [
         'title' => $faker->sentence,
         'content' => $paragraph,

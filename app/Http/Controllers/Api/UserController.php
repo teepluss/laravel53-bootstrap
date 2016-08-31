@@ -22,7 +22,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function me($Request $request)
+    public function me(Request $request)
     {
         return $request->user();
     }
