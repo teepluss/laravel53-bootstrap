@@ -1,0 +1,25 @@
+{
+  "name": "L53",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Teepluss <admin@jquerytips.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/teepluss/laravel53-bootstrap",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./resources/assets/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "AdminLTE": "admin-lte#^2.3.6",
+    "font-awesome": "^4.6.3",
+    "Ionicons": "ionicons#^2.0.1",
+    "jquery": "^2.2.3",
+    "bootstrap": "^3.3.6"
+  }
+}

@@ -1,14 +1,10 @@
 
 window._ = require('lodash');
-
 /**
- * We'll load jQuery and the Bootstrap jQuery plugin which provides support
- * for JavaScript based Bootstrap features such as modals and tabs. This
- * code may be modified to fit the specific needs of your application.
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the body of the page. From here, you may begin adding components to
+ * the application, or feel free to tweak this setup for your needs.
  */
-
-window.$ = window.jQuery = require('jquery');
-require('bootstrap-sass');
 
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces
@@ -31,14 +27,21 @@ Vue.http.interceptors.push((request, next) => {
 });
 
 /**
- * Echo exposes an expressive API for subscribing to channels and listening
- * for events that are broadcast by Laravel. Echo and event broadcasting
- * allows your team to easily build robust real-time web applications.
+ * Application login go here!.
  */
 
-// import Echo from "laravel-echo"
+const app = new Vue({
+    el: '#vue-app',
+    data: () => {
+        return {
+            lists: [
+                {'id': 1},
+                {'id': 2}
+            ]
+        }
+    },
+    ready: () => {
+        //console.log('VUE INSTANCE');
+    },
 
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: 'your-pusher-key'
-// });
+});

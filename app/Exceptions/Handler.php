@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Auth\AuthenticationException;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
@@ -44,6 +45,11 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        // The policy is not allow for current user.
+        if ($exception instanceof AuthorizationException) {
+            abort(403, 'This action is unauthorized.');
+        }
+
         return parent::render($request, $exception);
     }
 

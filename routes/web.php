@@ -30,7 +30,7 @@ Route::get('/post', [
 Route::get('/post/create', [
     'as' => 'post.create',
     'uses' => 'PostController@create'
-])->middleware(['auth:web', 'can:create,App\Post']);
+])->middleware(['auth:web', 'can:creatse,App\Post']);
 
 Route::post('/post', [
     'as' => 'post.store',
