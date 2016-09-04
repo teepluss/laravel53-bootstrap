@@ -3,12 +3,13 @@
 namespace App;
 
 use App\Traits\AccessControl;
+use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable, AccessControl;
+    use HasApiTokens, Notifiable, AccessControl;
 
     /**
      * The attributes that should be cast to native types.

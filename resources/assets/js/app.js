@@ -16,5 +16,21 @@ require('./bootstrap');
 Vue.component('example', require('./components/Example.vue'));
 
 const app = new Vue({
-    el: 'body'
+    el: 'body',
+    data: function() {
+      return {
+        user: null
+      }
+    },
+    created: function() {
+      this.getUser()
+    },
+    methods: {
+      getUser: function(callback) {
+        this.$http.get('/api/user/me').then(function(response) {
+          this.$set('user', response.data)
+        })
+      }
+    }
 });
+

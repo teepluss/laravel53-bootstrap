@@ -40,6 +40,33 @@
       <li class="treeview">
         <a href="#">
           <i class="fa fa-files-o"></i>
+          <span>Statement</span>
+          <span class="pull-right-container">
+            <span class="label label-primary pull-right">4</span>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Listing</a></li>
+          <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Today</a></li>
+          <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Yesterday</a></li>
+          <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> This Week</a></li>
+          <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> This Month</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-files-o"></i>
+          <span>Config Bank</span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Listing</a></li>
+          <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Create a new bank</a></li>
+        </ul>
+      </li>
+
+      {{-- <li class="treeview">
+        <a href="#">
+          <i class="fa fa-files-o"></i>
           <span>Layout Options</span>
           <span class="pull-right-container">
             <span class="label label-primary pull-right">4</span>
@@ -192,7 +219,7 @@
       <li class="header">LABELS</li>
       <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
       <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-      <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+      <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li> --}}
     </ul>
   </section>
   <!-- /.sidebar -->

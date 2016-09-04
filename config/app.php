@@ -167,9 +167,9 @@ return [
          * Package Service Providers...
          */
         Laravel\Scout\ScoutServiceProvider::class,
+        Laravel\Passport\PassportServiceProvider::class,
         ScoutEngines\Elasticsearch\ElasticsearchProvider::class,
         Darsain\Console\ConsoleServiceProvider::class,
-
 
         /*
          * Application Service Providers...

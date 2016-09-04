@@ -11,6 +11,7 @@
     <title>Laravel</title>
 
     <!-- Styles -->
+    <link href="{{ elixir('css/admin.css') }}" rel="stylesheet">
     <link href="{{ elixir('css/cms.css') }}" rel="stylesheet">
 
     <!-- Scripts -->

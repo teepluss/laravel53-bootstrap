@@ -17,9 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/user', [
-    'as' => 'user',
-    'uses' => 'UserController@index'
+Route::get('/home', [
+    'as' => 'home',
+    'uses' => 'HomeController@index'
 ])->middleware('auth:web');
 
 Route::get('/post', [

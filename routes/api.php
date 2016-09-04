@@ -18,6 +18,6 @@ Route::group(['namespace' => 'Api', 'prefix' => 'api', 'as' => 'api.'], function
     Route::get('/user/me', [
         'as' => 'user.me',
         'uses' => 'UserController@me'
-    ]);
+    ])->middleware(['auth:api']);
 
 });
